@@ -4,7 +4,7 @@
 This code will install all the needed software. This will need to be done only once:
 
 ```bash
-git clone ...
+git clone https://github.com/Alexander-Barth/lumi-lux-mem-issues/
 cd lumi-lux-mem-issues
 module load Local-CSC julia/1.12.0 julia-amdgpu/1.1.3
 julia --project=. --eval "using Pkg; Pkg.instantiate(); Pkg.precompile()"
