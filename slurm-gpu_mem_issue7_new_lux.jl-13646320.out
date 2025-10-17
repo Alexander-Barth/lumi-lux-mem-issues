@@ -1,0 +1,240 @@
+This software collection is provided and supported by CSC.
+Run `module help Local-CSC` for more information about support.
+Not all software may be compatible with software in other stacks,
+so mix at your own risk. 
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) rocm/6.0.3
+
+The following have been reloaded with a version change:
+  1) julia/1.12.0 => julia/1.11.3
+
+This software collection is provided and supported by CSC.
+Run `module help Local-CSC` for more information about support.
+Not all software may be compatible with software in other stacks,
+so mix at your own risk. 
+
+The following have been reloaded with a version change:
+  1) julia/1.11.3 => julia/1.12.0
+
+SLURM_JOB_NAME: gpu_mem_issue7_new_luc.jl
+SLURM_JOB_NODELIST: nid005043
+ROCR_VISIBLE_DEVICES: 0
+julia: /appl/local/csc/soft/math/julia/1.12.0/bin/julia
+arguments: gpu_mem_issue7.jl
+Precompiling packages...
+ 110073.7 ms  ✓ Functors
+ 106500.4 ms  ✓ Static
+   1153.7 ms  ✓ ArrayInterface → ArrayInterfaceChainRulesCoreExt
+  40622.9 ms  ✓ StaticArrayInterface
+   1670.6 ms  ✓ ComponentArrays
+  5 dependencies successfully precompiled in 183 seconds. 20 already precompiled.
+Precompiling packages...
+    938.4 ms  ✓ StaticArrayInterface → StaticArrayInterfaceStaticArraysExt
+  1 dependency successfully precompiled in 6 seconds. 21 already precompiled.
+Precompiling packages...
+    665.4 ms  ✓ StaticArrayInterface → StaticArrayInterfaceOffsetArraysExt
+  1 dependency successfully precompiled in 1 seconds. 19 already precompiled.
+Precompiling packages...
+   1457.5 ms  ✓ ChunkCodecLibZlib
+    794.8 ms  ✓ ChunkCodecLibZstd
+ 223409.6 ms  ✓ JLD2
+  3 dependencies successfully precompiled in 236 seconds. 37 already precompiled.
+Precompiling packages...
+   2222.8 ms  ✓ CPUSummary
+   3485.9 ms  ✓ DispatchDoctor
+   2675.5 ms  ✓ Optimisers
+   2086.3 ms  ✓ MLDataDevices
+   7659.1 ms  ✓ WeightInitializers
+   9393.4 ms  ✓ KernelAbstractions
+   1801.4 ms  ✓ LuxCore
+   1243.2 ms  ✓ DispatchDoctor → DispatchDoctorEnzymeCoreExt
+   1567.9 ms  ✓ DispatchDoctor → DispatchDoctorChainRulesCoreExt
+   1504.9 ms  ✓ Optimisers → OptimisersEnzymeCoreExt
+   9092.8 ms  ✓ ForwardDiff
+   1209.1 ms  ✓ Optimisers → OptimisersAdaptExt
+   1406.6 ms  ✓ MLDataDevices → MLDataDevicesChainRulesCoreExt
+   1643.0 ms  ✓ WeightInitializers → WeightInitializersChainRulesCoreExt
+   2251.4 ms  ✓ KernelAbstractions → LinearAlgebraExt
+   1906.5 ms  ✓ KernelAbstractions → EnzymeExt
+   1327.2 ms  ✓ LuxCore → LuxCoreChainRulesCoreExt
+   1122.4 ms  ✓ LuxCore → LuxCoreFunctorsExt
+   1104.2 ms  ✓ LuxCore → LuxCoreEnzymeCoreExt
+   1202.5 ms  ✓ LuxCore → LuxCoreSetfieldExt
+   1477.5 ms  ✓ LuxCore → LuxCoreMLDataDevicesExt
+   2635.2 ms  ✓ ForwardDiff → ForwardDiffStaticArraysExt
+   7498.5 ms  ✓ NNlib
+   2020.5 ms  ✓ NNlib → NNlibSpecialFunctionsExt
+   2191.7 ms  ✓ NNlib → NNlibEnzymeCoreExt
+   1168.9 ms  ✓ NNlib → NNlibForwardDiffExt
+   8336.1 ms  ✓ LuxLib
+  26892.1 ms  ✓ Lux
+  28 dependencies successfully precompiled in 101 seconds. 71 already precompiled.
+Precompiling packages...
+   1921.1 ms  ✓ ComponentArrays → ComponentArraysKernelAbstractionsExt
+  1 dependency successfully precompiled in 4 seconds. 40 already precompiled.
+Precompiling packages...
+   1532.1 ms  ✓ KernelAbstractions → SparseArraysExt
+  1 dependency successfully precompiled in 2 seconds. 29 already precompiled.
+Precompiling packages...
+   1013.5 ms  ✓ ComponentArrays → ComponentArraysOptimisersExt
+  1 dependency successfully precompiled in 3 seconds. 28 already precompiled.
+Precompiling packages...
+    834.7 ms  ✓ MLDataDevices → MLDataDevicesSparseArraysExt
+  1 dependency successfully precompiled in 1 seconds. 19 already precompiled.
+Precompiling packages...
+    641.1 ms  ✓ MLDataDevices → MLDataDevicesFillArraysExt
+  1 dependency successfully precompiled in 1 seconds. 16 already precompiled.
+Precompiling packages...
+   1031.6 ms  ✓ MLDataDevices → MLDataDevicesComponentArraysExt
+  1 dependency successfully precompiled in 1 seconds. 27 already precompiled.
+Precompiling packages...
+   1713.6 ms  ✓ Lux → LuxComponentArraysExt
+  1 dependency successfully precompiled in 3 seconds. 105 already precompiled.
+Precompiling packages...
+   2039.8 ms  ✓ BangBang
+   1564.2 ms  ✓ SimpleTraits
+   6061.5 ms  ✓ StatsBase
+   2433.4 ms  ✓ SplittablesBase
+   1291.1 ms  ✓ BangBang → BangBangChainRulesCoreExt
+   1514.1 ms  ✓ BangBang → BangBangStaticArraysExt
+   1175.1 ms  ✓ BangBang → BangBangTablesExt
+   1866.8 ms  ✓ MicroCollections
+   2689.9 ms  ✓ MLCore
+   5219.9 ms  ✓ Transducers
+   1678.2 ms  ✓ Transducers → TransducersAdaptExt
+   5163.0 ms  ✓ FLoops
+   8921.9 ms  ✓ MLUtils
+  13 dependencies successfully precompiled in 46 seconds. 86 already precompiled.
+Precompiling packages...
+   1830.1 ms  ✓ MLDataDevices → MLDataDevicesMLUtilsExt
+  1 dependency successfully precompiled in 3 seconds. 104 already precompiled.
+Precompiling packages...
+   2222.7 ms  ✓ Lux → LuxMLUtilsExt
+  1 dependency successfully precompiled in 4 seconds. 158 already precompiled.
+Precompiling packages...
+   2132.9 ms  ✓ ZygoteRules
+   8370.3 ms  ✓ ChainRules
+  52659.7 ms  ✓ Zygote
+  3 dependencies successfully precompiled in 66 seconds. 64 already precompiled.
+Precompiling packages...
+    677.1 ms  ✓ Accessors → StructArraysExt
+  1 dependency successfully precompiled in 1 seconds. 20 already precompiled.
+Precompiling packages...
+    706.2 ms  ✓ BangBang → BangBangStructArraysExt
+  1 dependency successfully precompiled in 1 seconds. 24 already precompiled.
+Precompiling packages...
+    865.5 ms  ✓ StructArrays → StructArraysStaticArraysExt
+  1 dependency successfully precompiled in 1 seconds. 19 already precompiled.
+Precompiling packages...
+    977.8 ms  ✓ StructArrays → StructArraysGPUArraysCoreExt
+  1 dependency successfully precompiled in 1 seconds. 36 already precompiled.
+Precompiling packages...
+    982.8 ms  ✓ ArrayInterface → ArrayInterfaceChainRulesExt
+  1 dependency successfully precompiled in 1 seconds. 40 already precompiled.
+Precompiling packages...
+   1007.6 ms  ✓ MLDataDevices → MLDataDevicesChainRulesExt
+  1 dependency successfully precompiled in 1 seconds. 42 already precompiled.
+Precompiling packages...
+   1952.3 ms  ✓ ComponentArrays → ComponentArraysZygoteExt
+  1 dependency successfully precompiled in 4 seconds. 80 already precompiled.
+Precompiling packages...
+   1659.7 ms  ✓ MLDataDevices → MLDataDevicesZygoteExt
+  1 dependency successfully precompiled in 2 seconds. 74 already precompiled.
+Precompiling packages...
+   3484.1 ms  ✓ Lux → LuxZygoteExt
+  1 dependency successfully precompiled in 4 seconds. 137 already precompiled.
+Precompiling packages...
+   6094.4 ms  ✓ AcceleratedKernels
+   8354.9 ms  ✓ GPUArrays
+  33910.8 ms  ✓ AMDGPU
+  3 dependencies successfully precompiled in 61 seconds. 89 already precompiled.
+Precompiling packages...
+Info Given ComponentArraysGPUArraysExt was explicitly requested, output will be shown live [0K
+[0KWARNING: Constructor for type "ComponentArray" was extended in `ComponentArraysGPUArraysExt` without explicit qualification or import.
+[0K  NOTE: Assumed "ComponentArray" refers to `ComponentArrays.ComponentArray`. This behavior is deprecated and may differ in future versions.`
+[0K  NOTE: This behavior may have differed in Julia versions prior to 1.12.
+[0K  Hint: If you intended to create a new generic function of the same name, use `function ComponentArray end`.
+[0K  Hint: To silence the warning, qualify `ComponentArray` as `ComponentArrays.ComponentArray` in the method signature or explicitly `import ComponentArrays: ComponentArray`.
+   2278.3 ms  ✓ ComponentArrays → ComponentArraysGPUArraysExt
+  1 dependency successfully precompiled in 3 seconds. 72 already precompiled.
+  1 dependency had output during precompilation:
+┌ ComponentArrays → ComponentArraysGPUArraysExt
+│  [Output was shown above]
+└  
+Precompiling packages...
+   1854.3 ms  ✓ MLDataDevices → MLDataDevicesGPUArraysExt
+  1 dependency successfully precompiled in 8 seconds. 60 already precompiled.
+Precompiling packages...
+   1887.1 ms  ✓ WeightInitializers → WeightInitializersGPUArraysExt
+  1 dependency successfully precompiled in 2 seconds. 62 already precompiled.
+Precompiling packages...
+   2125.0 ms  ✓ GPUArrays → JLD2Ext
+  1 dependency successfully precompiled in 3 seconds. 60 already precompiled.
+Precompiling packages...
+   7360.0 ms  ✓ AMDGPU → AMDGPUChainRulesCoreExt
+   8121.3 ms  ✓ NNlib → NNlibAMDGPUExt
+  2 dependencies successfully precompiled in 9 seconds. 102 already precompiled.
+Precompiling packages...
+   3932.1 ms  ✓ MLDataDevices → MLDataDevicesAMDGPUExt
+  1 dependency successfully precompiled in 5 seconds. 102 already precompiled.
+Precompiling packages...
+   3730.7 ms  ✓ WeightInitializers → WeightInitializersAMDGPUExt
+  1 dependency successfully precompiled in 4 seconds. 95 already precompiled.
+Precompiling packages...
+   3818.8 ms  ✓ AMDGPU → AMDGPUEnzymeCoreExt
+  1 dependency successfully precompiled in 4 seconds. 95 already precompiled.
+AMDGPU.devices() = AMDGPU.HIP.HIPDevice[HIPDevice(id=1, name=AMD Instinct MI250X, gcn_arch=gfx90a:sramecc+:xnack-)]
+[ Info: AMDGPU versioninfo
+┌───────────┬──────────────────┬───────────┬────────────────────────────────────
+│ Available │ Name             │ Version   │ Path                              ⋯
+├───────────┼──────────────────┼───────────┼────────────────────────────────────
+│     +     │ LLD              │ -         │ /opt/rocm-6.0.3/lib/llvm/bin/ld.l ⋯
+│     +     │ Device Libraries │ -         │ /users/barthale/.julia/artifacts/ ⋯
+│     +     │ HIP              │ 6.0.32831 │ /opt/rocm-6.0.3/lib/libamdhip64.s ⋯
+│     +     │ rocBLAS          │ 4.0.0     │ /opt/rocm-6.0.3/lib/librocblas.so ⋯
+│     +     │ rocSOLVER        │ 3.24.0    │ /opt/rocm-6.0.3/lib/librocsolver. ⋯
+│     +     │ rocSPARSE        │ 3.0.2     │ /opt/rocm-6.0.3/lib/librocsparse. ⋯
+│     +     │ rocRAND          │ 2.10.5    │ /opt/rocm-6.0.3/lib/librocrand.so ⋯
+│     +     │ rocFFT           │ 1.0.25    │ /opt/rocm-6.0.3/lib/librocfft.so  ⋯
+│     +     │ MIOpen           │ 3.0.0     │ /opt/rocm-6.0.3/lib/libMIOpen.so  ⋯
+└───────────┴──────────────────┴───────────┴────────────────────────────────────
+                                                                1 column omitted
+
+[ Info: AMDGPU devices
+┌────┬─────────────────────┬────────────────────────┬───────────┬────────────┬──
+│ Id │                Name │               GCN arch │ Wavefront │     Memory │ ⋯
+├────┼─────────────────────┼────────────────────────┼───────────┼────────────┼──
+│  1 │ AMD Instinct MI250X │ gfx90a:sramecc+:xnack- │        64 │ 63.984 GiB │ ⋯
+└────┴─────────────────────┴────────────────────────┴───────────┴────────────┴──
+                                                                1 column omitted
+
+parallel = false
+output directory: /users/barthale/Data/Biscay/Results-fm/2025-10-17T182059
+using 1 thread(s)
+┌ Info: parameters
+│   nepochs = 1000
+│   batchsize = 128
+│   learning_rate = 0.0005
+│   channels = (64, 128, 256)
+│   activation = selu (generic function with 2 methods)
+└   nfrequencies = 3
+outdir = "/users/barthale/Data/Biscay/Results-fm/2025-10-17T182059"
+backend = nothing
+(nn, lossval) = (1, 2.0090263f0)
+(nn, lossval) = (2, 1.6517578f0)
+(nn, lossval) = (3, 1.6128658f0)
+(nn, lossval) = (4, 1.5996172f0)
+(nn, lossval) = (5, 1.5972232f0)
+(nn, lossval) = (6, 1.5835683f0)
+(nn, lossval) = (7, 1.5814285f0)
+(nn, lossval) = (8, 1.5749596f0)
+(nn, lossval) = (9, 1.5712975f0)
+(nn, lossval) = (10, 1.5667591f0)
+:0:rocdevice.cpp            :2724: 377148849098 us: [pid:97988 tid:0x14d31dbff700] Callback: Queue 0x14d31aa00000 Aborting with error : HSA_STATUS_ERROR_OUT_OF_RESOURCES: The runtime failed to allocate the necessary resources. This error may also occur when the core runtime library needs to spawn threads or create internal OS-specific events. Code: 0x1008 Available Free mem : 0 MB
+
+[97988] signal 6 (-6): Aborted
+in expression starting at /pfs/lustrep4/users/barthale/.julia/dev/lumi-lux-mem-issues/gpu_mem_issue7.jl:393
+Allocations: 690448124 (Pool: 690385601; Big: 62523); GC: 10045
+srun: error: nid005043: task 0: Aborted
+srun: Terminating StepId=13646320.0
