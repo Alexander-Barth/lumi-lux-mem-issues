@@ -65,3 +65,4 @@ hard_memory_limit = "60 %"
 eager_gc = true
 ```
 
+Previously reduced reproducer for `HSA_STATUS_ERROR_OUT_OF_RESOURCES` do not fail any more with these settings. But unfortunately, my primary application still fails with this error.
