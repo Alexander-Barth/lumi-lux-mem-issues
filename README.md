@@ -25,11 +25,15 @@ This script reproduces the `HSA_STATUS_ERROR_OUT_OF_RESOURCES` error:
 :0:rocdevice.cpp            :2724: 10459743014355 us: [pid:2564  tid:0x150c4f3ff700] Callback: Queue 0x150b4de00000 Aborting with error : HSA_STATUS_ERROR_OUT_OF_RESOURCES: The runtime failed to allocate the necessary resources. This error may also occur when the core runtime library needs to spawn threads or create internal OS-specific events. Code: 0x1008 Available Free mem : 0 MB
 ```
 
+`gpu_mem_issue7.jl` is submitted to SLURM via:
+
+```bash
 sbatch --account=project_X --job-name=gpu_mem_issue7  --partition=small-g --time=48:00:00 --mem-per-cpu=30G --cpus-per-task=1  --ntasks=1 --nodes=1 --gpus=1  training.sh gpu_mem_issue7.jl
+```
 
 I got a consistent failure for this case (4 out of 4 tests).
 
-## CPU memory "leak" ?
+## CPU memory "leak"
 
 
 This script reproduces or memory leak (or memory fragmentation,...):
