@@ -4,7 +4,7 @@
 This code will install all the needed software. This will need to be done only once:
 
 ```bash
-git clone ...
+git clone https://github.com/Alexander-Barth/lumi-lux-mem-issues
 cd lumi-lux-mem-issues
 module load Local-CSC julia/1.12.0 julia-amdgpu/1.1.3
 julia --project=. --eval "using Pkg; Pkg.instantiate(); Pkg.precompile()"
@@ -16,20 +16,27 @@ For testing we will install all software in `~/.julia`. In my "production" runs,
 
 ## GPU memory issue
 
-This script reproduces the `HSA_STATUS_ERROR_OUT_OF_RESOURCES` error:
+
+`gpu_mem_issue7.jl` is submitted to SLURM via:
 
 ```bash
+sbatch --account=project_X --job-name=gpu_mem_issue7  --partition=small-g --time=48:00:00 --mem-per-cpu=30G --cpus-per-task=1  --ntasks=1 --nodes=1 --gpus=1  training.sh gpu_mem_issue7.jl
+```
+
+This script reproduces the `HSA_STATUS_ERROR_OUT_OF_RESOURCES` error:
+
+```
 [...]
 (nn, lossval) = (9, 1.5727558f0)
 (nn, lossval) = (10, 1.5775862f0)
 :0:rocdevice.cpp            :2724: 10459743014355 us: [pid:2564  tid:0x150c4f3ff700] Callback: Queue 0x150b4de00000 Aborting with error : HSA_STATUS_ERROR_OUT_OF_RESOURCES: The runtime failed to allocate the necessary resources. This error may also occur when the core runtime library needs to spawn threads or create internal OS-specific events. Code: 0x1008 Available Free mem : 0 MB
 ```
 
-sbatch --account=project_X --job-name=gpu_mem_issue7  --partition=small-g --time=48:00:00 --mem-per-cpu=30G --cpus-per-task=1  --ntasks=1 --nodes=1 --gpus=1  training.sh gpu_mem_issue7.jl
 
 I got a consistent failure for this case (4 out of 4 tests).
 
-## CPU memory "leak" ?
+
+## CPU memory "leak"
 
 
 This script reproduces or memory leak (or memory fragmentation,...):
@@ -61,3 +68,5 @@ hard_memory_limit = "60 %"
 eager_gc = true
 ```
 
+Previously reduced reproducers for `HSA_STATUS_ERROR_OUT_OF_RESOURCES` do not fail any more with these settings. But unfortunately, my primary application still fails with this error.
+* explicetely trigged `GC.gc()` in the training loop
