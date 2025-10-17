@@ -1,0 +1,15 @@
+[MPIPreferences]
+__clear__ = ["preloads"]
+_format = "1.1"
+abi = "MPICH"
+binary = "system"
+cclibs = ["sci_cray_mpi", "sci_cray", "dl", "dsmml", "xpmem", "stdc++", "pgas-shmem", "quadmath", "modules", "fi", "craymath", "f", "u", "csup"]
+libmpi = "libmpi_cray.so"
+mpiexec = "srun"
+preloads = ["libmpi_gtl_hsa.so"]
+preloads_env_switch = "MPICH_GPU_SUPPORT_ENABLED"
+
+[AMDGPU]
+use_artifacts = false
+hard_memory_limit = "60 %"
+eager_gc = true
