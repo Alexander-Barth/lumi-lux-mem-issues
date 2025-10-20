@@ -17,7 +17,9 @@ else
     const GPU = AMDGPU
 end
 
-cp(@__FILE__,"script-" * ENV["SLURM_JOB_ID"] * ".jl")
+if haskey(ENV,"SLURM_JOB_ID")
+    cp(@__FILE__,"script-" * ENV["SLURM_JOB_ID"] * ".jl")
+end
 
 in_channels = 2
 channels = (64,128,256)
