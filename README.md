@@ -56,6 +56,14 @@ srun: error: nid007876: task 0: Out Of Memory
 srun: Terminating StepId=13631246.1
 ```
 
+See also:
+
+https://github.com/LuxDL/Lux.jl/issues/1516
+https://github.com/JuliaGPU/AMDGPU.jl/issues/836
+
+
+
+
 # What I have tried:
 
 * I tried to simplify the code, but unfortunately it seems to only reduce the probability of occurence of the failure (without solving it).
