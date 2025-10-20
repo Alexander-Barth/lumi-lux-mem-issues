@@ -70,3 +70,4 @@ eager_gc = true
 
 Previously reduced reproducers for `HSA_STATUS_ERROR_OUT_OF_RESOURCES` do not fail any more with these settings. But unfortunately, my primary application still fails with this error.
 * explicetely trigged `GC.gc()` in the training loop
+* updated to the current version of Lux.jl and AMDGPU.jl
