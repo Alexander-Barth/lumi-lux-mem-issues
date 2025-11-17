@@ -2,35 +2,36 @@
 # Comparing pytorch/Lux.jl and MI250X/A100 for a 2D convolution
 
 * 2D convolution with kernel size 3 of a matrix of size n x n x 64 x 128  (W x H x C x N) where `n` is the size parameter in the following tables following by a ReLU
-* code: [bench_conv.jl](bench_conv.jl) and [bench_conv.py](bench_conv.py) for more information
+* See the code: [bench_conv.jl](bench_conv.jl) and [bench_conv.py](bench_conv.py) for more information
 * Absolute times in ms
 
 |                                             **case** | **size 32** | **size 64** | **size 128** | **size 256** |
 |-----------------------------------------------------:|------------:|------------:|-------------:|-------------:|
-|                        CUDA.jl NVIDIA A100 SXM4 40GB |        0.29 |        0.77 |          2.7 |        10.32 |
-|                        pytorch NVIDIA A100 SXM4 40GB |        0.39 |        1.31 |         4.19 |        16.41 |
-|       exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |        0.81 |         2.7 |        10.46 |        41.45 |
-|   exclusif-AMDGPU.jl non eagerGC AMD Instinct MI250X |        0.79 |        2.71 |        10.45 |        41.38 |
-|   non exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |        0.88 |        4.32 |        17.52 |        43.17 |
-| non exclusif-AMDGPU.jl noeagerGC AMD Instinct MI250X |        0.86 |        4.31 |        17.57 |        71.07 |
-|             non exclusif-pytorch AMD Instinct MI250X |        0.52 |        1.89 |         7.31 |        29.04 |
+|                        CUDA.jl NVIDIA A100 SXM4 40GB |       0.292 |       0.769 |        2.696 |       10.323 |
+|                        pytorch NVIDIA A100 SXM4 40GB |       0.394 |       1.307 |        4.187 |       16.415 |
+|   non exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |       0.885 |       4.322 |       17.521 |        43.17 |
+| non exclusif-AMDGPU.jl noeagerGC AMD Instinct MI250X |       0.863 |       4.314 |       17.572 |       71.073 |
+|             non exclusif-pytorch AMD Instinct MI250X |       0.523 |       1.891 |         7.31 |       29.035 |
+|       exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |       0.811 |       2.698 |       10.462 |       41.452 |
+|     exclusif-AMDGPU.jl noeagerGC AMD Instinct MI250X |        0.79 |       2.706 |       10.446 |       41.379 |
 
+The 71.073 ms for the 256x256 case, might be related to the fact that the MI250X is not used exclusively by the test.
 
 * Relative times compared to CUDA.jl NVIDIA A100:
-
 |                                             **case** | **size 32** | **size 64** | **size 128** | **size 256** |
 |-----------------------------------------------------:|------------:|------------:|-------------:|-------------:|
 |                        CUDA.jl NVIDIA A100 SXM4 40GB |         1.0 |         1.0 |          1.0 |          1.0 |
-|                        pytorch NVIDIA A100 SXM4 40GB |     1.34483 |      1.7013 |      1.55185 |      1.59012 |
-|       exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |      2.7931 |     3.50649 |      3.87407 |      4.01647 |
-|   exclusif-AMDGPU.jl non eagerGC AMD Instinct MI250X |     2.72414 |     3.51948 |      3.87037 |      4.00969 |
-|   non exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |     3.03448 |     5.61039 |      6.48889 |      4.18314 |
-| non exclusif-AMDGPU.jl noeagerGC AMD Instinct MI250X |     2.96552 |      5.5974 |      6.50741 |      6.88663 |
-|             non exclusif-pytorch AMD Instinct MI250X |      1.7931 |     2.45455 |      2.70741 |      2.81395 |
+|                        pytorch NVIDIA A100 SXM4 40GB |        1.35 |         1.7 |         1.55 |         1.59 |
+|   non exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |        3.03 |        5.62 |          6.5 |         4.18 |
+| non exclusif-AMDGPU.jl noeagerGC AMD Instinct MI250X |        2.95 |        5.61 |         6.52 |         6.88 |
+|             non exclusif-pytorch AMD Instinct MI250X |        1.79 |        2.46 |         2.71 |         2.81 |
+|       exclusif-AMDGPU.jl eagerGC AMD Instinct MI250X |        2.77 |        3.51 |         3.88 |         4.02 |
+|     exclusif-AMDGPU.jl noeagerGC AMD Instinct MI250X |         2.7 |        3.52 |         3.87 |         4.01 |
+
 
 ## Note
-* We comparing a single graphical compute dice (GCD) to a full A100. AMD Instinct MI250X has two GCDs.
-* `eagerGC` means `AMDGPU.EAGER_GC[] = true`, and noeagerGC means the default for AMDGPU.jl 2.1.2 (https://github.com/JuliaGPU/AMDGPU.jl/issues/844)
+*  **AMD Instinct MI250X has two GCDs (Graphics Compute Die). We comparing a single GCD to a full A100.**
+* `eagerGC` means `AMDGPU.EAGER_GC[] = true`, and  `noeagerGC` means the default GC for AMDGPU.jl 2.1.2 (https://github.com/JuliaGPU/AMDGPU.jl/issues/844)
 * exclusif mean we reserve a full AMD Instinct MI250X, i.e. two GCDs but use only one
 * non-exclusif mean we reserve only a single GCD (the other GCD is potentially used by another user)
 * LUMI (Instinct MI250X):
