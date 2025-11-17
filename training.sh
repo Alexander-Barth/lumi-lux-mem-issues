@@ -7,6 +7,7 @@
 # sbatch  --partition=small-g --time=12:00:00   --mem-per-cpu=70G --cpus-per-task=1  --ntasks=1 --nodes=1 --gpus=1  training-sat-vel.sh test_unet_vel_fm.jl
 
 module load Local-CSC julia/1.12.0 julia-amdgpu/1.1.3
+module load LUMI/24.03 partition/G rocm/6.2.2
 
 echo SLURM_JOB_NAME:       $SLURM_JOB_NAME
 echo SLURM_JOB_NODELIST:   $SLURM_JOB_NODELIST

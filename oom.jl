@@ -18,7 +18,7 @@ else
 end
 
 if haskey(ENV,"SLURM_JOB_ID")
-    cp(@__FILE__,"script-" * ENV["SLURM_JOB_ID"] * ".jl")
+    cp(@__FILE__,"script-" * ENV["SLURM_JOB_ID"] * ".jl",force=true)
 end
 
 in_channels = 2
@@ -64,7 +64,7 @@ function train!(train_state, device, in_channels, out_channels, batchsize)
         sum_loss += loss
 
         # explicetly run julia's garbage collector
-        GC.gc()
+        #GC.gc()
         # print Max. RSS in MiB
         @printf "%d: Max. RSS:  %9.3f MiB\n" i Sys.maxrss()/2^20
         flush(stdout)
