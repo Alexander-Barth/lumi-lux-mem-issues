@@ -18,6 +18,7 @@
 The 71.073 ms for the 256x256 case, might be related to the fact that the MI250X is not used exclusively by the test.
 
 * Relative times compared to CUDA.jl NVIDIA A100:
+  
 |                                             **case** | **size 32** | **size 64** | **size 128** | **size 256** |
 |-----------------------------------------------------:|------------:|------------:|-------------:|-------------:|
 |                        CUDA.jl NVIDIA A100 SXM4 40GB |         1.0 |         1.0 |          1.0 |          1.0 |
