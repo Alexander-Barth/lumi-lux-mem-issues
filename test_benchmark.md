@@ -45,7 +45,15 @@ The 71.073 ms for the 256x256 case, might be related to the fact that the MI250X
 
 When trying to use a MI250X exclusivly, pytorch on Instinct MI250X fails with:
 
-```Singularity> ROCR_VISIBLE_DEVICES=0 python bench_conv.py 
+
+
+```
+$ srun --interactive --pty singularity exec --bind /pfs,/scratch,/projappl,/appl,/project,/flash,/users/barthale,/tmp /appl/local/containers/sif-images/lumi-pytorch-rocm-6.2.4-python-3.12-pytorch-v2.6.0.sif bash
+bash: /opt/cray/pe/lmod/lmod/libexec/lmod: No such file or directory
+Singularity> python bench_conv.py 
+:0:rocdevice.cpp            :2986: 2912794651100 us: [pid:41773 tid:0x148afc3ff700] Callback: Queue 0x1489f7800000 aborting with error : HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION: The agent attempted to access memory beyond the largest legal address. code: 0x29
+Aborted
+Singularity> ROCR_VISIBLE_DEVICES=0 python bench_conv.py 
 :0:rocdevice.cpp            :2986: 2909498332452 us: [pid:110488 tid:0x1517ee3ff700] Callback: Queue 0x1517ee000000 aborting with error : HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION: The agent attempted to access memory beyond the largest legal address. code: 0x29
 Aborted
 ```
