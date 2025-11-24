@@ -57,3 +57,31 @@ Singularity> ROCR_VISIBLE_DEVICES=0 python bench_conv.py
 :0:rocdevice.cpp            :2986: 2909498332452 us: [pid:110488 tid:0x1517ee3ff700] Callback: Queue 0x1517ee000000 aborting with error : HSA_STATUS_ERROR_MEMORY_APERTURE_VIOLATION: The agent attempted to access memory beyond the largest legal address. code: 0x29
 Aborted
 ```
+
+Test with rocm 7.1
+```
+ singularity exec --bind /pfs,/scratch,/projappl,/appl,/project,/flash,/users/barthale,/tmp /users/barthale/scratch/pytorch_rocm7.1_ubuntu22.04_py3.10_pytorch_release_2.8.0.sif bash
+bash: /opt/cray/pe/lmod/lmod/libexec/lmod: No such file or directory
+Singularity> python bench_conv.py
+Traceback (most recent call last):
+  File "/users/barthale/.julia/dev/FlowMatching/examples/bench_conv.py", line 16, in <module>
+    y = model(x)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/container.py", line 244, in forward
+    input = module(input)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 548, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/opt/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 543, in _conv_forward
+    return F.conv2d(
+torch.AcceleratorError: HIP error: out of memory
+HIP kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing AMD_SERIALIZE_KERNEL=3
+Compile with `TORCH_USE_HIP_DSA` to enable device-side assertions.
+```
